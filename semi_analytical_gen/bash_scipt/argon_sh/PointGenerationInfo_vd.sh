@@ -22,7 +22,8 @@ verbose=T
 
 launchN=0
 Njobs=1
-NEWPROCESS=`echo "($launchN * $Njobs + $JOBSUBJOBSECTION - 1) " | bc`
+# NEWPROCESS=`echo "($launchN * $Njobs + $JOBSUBJOBSECTION - 1) " | bc`
+NEWPROCESS=`echo "($launchN * $Njobs + $JOBSUBJOBSECTION) " | bc`
 
 process=${NEWPROCESS}
 cluster=${CLUSTER}
@@ -39,20 +40,16 @@ contador=0
 # A shell script to print each number five times.
 for (( i = 0; i < 17; i++ ))      ### Outer for loop ###
 do
-    echo "!!!!!!!!!!!!!!!!!!! $i"
     for (( j = 0 ; j < 8; j++ )) ### Inner for loop ###
     do
-    	echo "!!!!!!!!!!!!!!!!!!! $j"
         for (( k = 0 ; k < 35; k++ )) ### Inner for loop ###
 	do
-		echo "!!!!!!!!!!!!!!!!!!! $k"
 	    #for (( l = 0; l < 1; l++ ))
 	    #do           
 		x=${x_[$i]}
 		y=${y_[$j]}
 		z=${z_[$k]}
 	    
-		echo "!!!!!!!!!!!!!!!!!!! $contador, ${NEWPROCESS} !!!!!!!!!!!!!!"
 		if [ "$contador" = "${NEWPROCESS}" ]
 		then
 		    echo "x      y     z      t      dx      dy      dz      dt      p         dp        n" >> myLightSourceSteering_$contador.txt

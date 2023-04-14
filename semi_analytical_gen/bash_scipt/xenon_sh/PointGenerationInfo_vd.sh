@@ -22,7 +22,7 @@ verbose=T
 
 launchN=0
 Njobs=1
-NEWPROCESS=`echo "($launchN * $Njobs + $JOBSUBJOBSECTION - 1) " | bc`
+NEWPROCESS=`echo "($launchN * $Njobs + $JOBSUBJOBSECTION) " | bc`
 
 process=${NEWPROCESS}
 cluster=${CLUSTER}
@@ -67,11 +67,15 @@ do
 done
 
 #------------------------------------------------------------
-
-
 chmod 755 myLightSourceSteering_${NEWPROCESS}.txt
+
+echo "==============================================="
+ls myLightSourceSteering_${NEWPROCESS}.txt
+
 mv myLightSourceSteering_${NEWPROCESS}.txt myLightSourceSteering.txt
 
+ls myLightSourceSteering.txt
+echo "==============================================="
 
 echo $FHICL_FILE_PATH "fhicl file path"
 
