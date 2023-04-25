@@ -22,8 +22,8 @@ verbose=T
 
 launchN=4
 Njobs=5000 # 27115 in total, corresponds to numjobs in xml file. 
-NEWPROCESS=`echo "($launchN * $Njobs + $JOBSUBJOBSECTION - 1) " | bc`
-#NEWPROCESS=`echo "($launchN * $Njobs + $PROCESS) " | bc`
+#NEWPROCESS=`echo "($launchN * $Njobs + $JOBSUBJOBSECTION - 1) " | bc`
+NEWPROCESS=`echo "($launchN * $Njobs + $PROCESS) " | bc`
 
 # Copy arguments into meaningful names.
 process=${NEWPROCESS}
