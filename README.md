@@ -22,7 +22,7 @@ The fast optical simulation in DUNE-vd are using so-called hybrid model, which i
  - The bash scripts we used to generate points for shotting photons are under `/semi_analytical_gen/bash_script`
    - `argon_sh` and `xenon_sh` essentially contains the same points expect for the momentum `p` of the photon are different (argon -- 9.69 and xenon -- 7.09, these are calculated by their wavelength)
 - folder: `/semi_analytical_gen/xml` --> we are using `project.py` to submit grid jobs, for such command, we need to have `xml` files
-  - please revisit this folder to change everything to your own directory. 
+  - please revisit this folder to change everything related in the xml to fit your situation.
 
 - Photon-library generations: 
   - We are only using library for the region outside of field cage. However, we can only generate a cubical photon library with the `LibrayBuildTool` that exisits now. --> We generate the whole library and them remove the active volume after. 
