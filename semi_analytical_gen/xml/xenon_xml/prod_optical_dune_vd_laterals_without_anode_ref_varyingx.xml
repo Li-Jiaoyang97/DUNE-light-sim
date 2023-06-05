@@ -21,8 +21,7 @@
 
   <!-- Batch resources -->
   <resource>DEDICATED,OPPORTUNISTIC,OFFSITE</resource>
-  <!--resource>DEDICATED</resource-->
-  <!--resource>FERMICLOUD_PRIV</resource-->
+  <blacklist>SU-ITS,UConn-HPC,RAL,CERN</blacklist>
 
   <!-- Larsoft information -->
   <ups>dunesw</ups> 

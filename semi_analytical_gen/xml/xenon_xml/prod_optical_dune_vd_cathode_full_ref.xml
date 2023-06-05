@@ -21,6 +21,7 @@
 
   <!-- Batch resources -->
   <resource>DEDICATED,OPPORTUNISTIC,OFFSITE</resource>
+  <blacklist>SU-ITS,UConn-HPC,RAL,CERN</blacklist>
   <!--resource>DEDICATED</resource-->
   <!--resource>FERMICLOUD_PRIV</resource-->
 
