@@ -19,4 +19,5 @@ The fast optical simulation in DUNE-vd are using so-called hybrid model, which i
     -  `dunevd10kt_3view_v5_1x8x14_full_ref.fcl` --> This fcl include all same information expect for the anode reflection. This is the legacy fcl we have when the anode is designed to be super reflective and we were asked to enable the functionality to include/not-include the anode reflections in xenon case. However, since the current reflectivity of anode is only ~12 %, we decided to absorb this reflections into the border effect (as how we handle the field-cage reflection and the anode reflectivity in argon-case) **This decision of course can be remaded with further study.**
  - The bash scripts we used to generate points for shotting photons are under `/semi_analytical_gen/bash_script`
    - `argon_sh` and `xenon_sh` essentially contains the same points expect for the momentum `p` of the photon are different (argon -- 9.69 and xenon -- 7.09, these are calculated by their wavelength)
-
+- folder: `/semi_analytical_gen/xml` --> we are using `project.py` to submit grid jobs, for such command, we need to have `xml` files
+  - There is a bash script `submitgrid.sh` would submit all grid jobs for the training sample. 
