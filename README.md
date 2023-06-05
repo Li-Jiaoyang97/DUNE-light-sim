@@ -20,4 +20,9 @@ The fast optical simulation in DUNE-vd are using so-called hybrid model, which i
  - The bash scripts we used to generate points for shotting photons are under `/semi_analytical_gen/bash_script`
    - `argon_sh` and `xenon_sh` essentially contains the same points expect for the momentum `p` of the photon are different (argon -- 9.69 and xenon -- 7.09, these are calculated by their wavelength)
 - folder: `/semi_analytical_gen/xml` --> we are using `project.py` to submit grid jobs, for such command, we need to have `xml` files
-  - There is a bash script `submitgrid.sh` would submit all grid jobs for the training sample. 
+  - please revisit this folder to change everything to your own directory. 
+
+
+## How to: 
+- Semi-analytical model: 
+  - There is a bash script `submitgrid.sh` under `/semi_analytical_gen/bash_script`, which would submit all grid jobs for the training sample. 
