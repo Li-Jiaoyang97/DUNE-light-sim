@@ -1,3 +1,5 @@
+// Author: Jiaoyang Li (jiaoyang.li@ed.ac.uk)
+
 // reads grid output and creates slimmed file for semi-analytic parameterisation generation 
 void grid_output_processing_real_geo(TString type){
 	//string type = "laterals_full_refl_xenon_varying_z"; 
@@ -42,7 +44,7 @@ void grid_output_processing_real_geo(TString type){
 	}
 
 	// create a new tree file with all the information needed
-	const TString root_file_name = "/dune/data/users/jiaoyang/new_traning_sample_0427/semi_analytic_hits_vd_"+type+".root";
+	const TString root_file_name = "./data/semi_analytic_hits_vd_"+type+".root";
 	TFile *hfile = new TFile(root_file_name,"RECREATE");
 	TTree *myTree = new TTree("myTree","A ROOT tree");
 	int VUV_hits[kMaxDevices];
@@ -73,6 +75,7 @@ void grid_output_processing_real_geo(TString type){
 		cout<<"-------------------------------------------------------"<<endl;
     	cout<<"File " << n << ": " << input_file << endl;
     	cout<<"-------------------------------------------------------"<<endl;
+
 		TFile *infile = TFile::Open(input_file.c_str());//new TFile(input_file.c_str());
 		
 		if (infile && !infile->IsZombie()) { // checking if the file is zombine or not.
@@ -133,12 +136,11 @@ void grid_output_processing_real_geo(TString type){
 			// fill tree
 			myTree->Fill();
 
-			// delete file
-			delete infile;
 		}else{
 			std::cerr << "Error opening file, the file is corrupted." << endl;
 		}
-
+		// delete file
+		delete infile;
 	} // end file loop
 
 	// write output file
