@@ -1,5 +1,6 @@
 # DUNE-light-sim
 This software package includes all files used for generating the training sample for fast optical simulation in DUNE-VD geometry. 
+**To-do: I will write down the analyse in the library and fitting the GH curves for semi-analytical mdoel. **
 
 ## General idea/Background info (will be better written in the future)
 The fast optical simulation in DUNE-vd are using so-called hybrid model, which is the combination of semi-analytcial model (active volume --inside of the field cage) and photon library (non-active volume -- outside of the field cage)
